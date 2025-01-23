@@ -68,7 +68,7 @@ const DeliveryMethods = () => {
                 </div>
 
                 <div className="border-l border-gray-4 pl-4">
-                  <p className="font-semibold text-dark">$10.99</p>
+                  <p className="font-semibold text-dark">UZS 10.99</p>
                   <p className="text-custom-xs">Стандартная доставка</p>
                 </div>
               </div>
@@ -108,7 +108,7 @@ const DeliveryMethods = () => {
                 </div>
 
                 <div className="border-l border-gray-4 pl-4">
-                  <p className="font-semibold text-dark">$12.50</p>
+                  <p className="font-semibold text-dark">UZS 12.50</p>
                   <p className="text-custom-xs">Стандартная доставка</p>
                 </div>
               </div>

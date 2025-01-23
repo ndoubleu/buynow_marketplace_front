@@ -35,7 +35,7 @@ const Footer = () => {
                 Ташкент, Узбекистан
               </li>
 
-              <li>
+              {/* <li>
                 <a href="#" className="flex items-center gap-4.5">
                   <svg
                     width="24"
@@ -63,7 +63,7 @@ const Footer = () => {
                   </svg>
                   (+998) 97 914 24 25
                 </a>
-              </li>
+              </li> */}
 
               <li>
                 <a href="#" className="flex items-center gap-4.5">

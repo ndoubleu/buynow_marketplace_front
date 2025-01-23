@@ -93,7 +93,7 @@ const Checkout = () => {
                       </div>
                       <div>
                         <p className="font-medium text-lg text-dark text-right">
-                          ${totalPrice}
+                          UZS {totalPrice}
                         </p>
                       </div>
                     </div>
