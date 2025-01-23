@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const СпособДоставки = () => {
-  const [способДоставки, установитьСпособДоставки] = useState("бесплатно");
+const DeliveryMethods = () => {
+  const [deliveryMethods, setDeliveryMethods] = useState("бесплатно");
 
   return (
     <div className="bg-white shadow-1 rounded-[10px] mt-7.5">
@@ -22,11 +22,11 @@ const СпособДоставки = () => {
                 name="бесплатно"
                 id="бесплатно"
                 className="sr-only"
-                onChange={() => установитьСпособДоставки("бесплатно")}
+                onChange={() => setDeliveryMethods("бесплатно")}
               />
               <div
                 className={`flex h-4 w-4 items-center justify-center rounded-full ${
-                  способДоставки === "бесплатно"
+                  deliveryMethods === "бесплатно"
                     ? "border-4 border-blue"
                     : "border border-gray-4"
                 }`}
@@ -45,11 +45,11 @@ const СпособДоставки = () => {
                 name="fedex"
                 id="fedex"
                 className="sr-only"
-                onChange={() => установитьСпособДоставки("fedex")}
+                onChange={() => setDeliveryMethods("fedex")}
               />
               <div
                 className={`flex h-4 w-4 items-center justify-center rounded-full ${
-                  способДоставки === "fedex"
+                  deliveryMethods === "fedex"
                     ? "border-4 border-blue"
                     : "border border-gray-4"
                 }`}
@@ -85,11 +85,11 @@ const СпособДоставки = () => {
                 name="dhl"
                 id="dhl"
                 className="sr-only"
-                onChange={() => установитьСпособДоставки("dhl")}
+                onChange={() => setDeliveryMethods("dhl")}
               />
               <div
                 className={`flex h-4 w-4 items-center justify-center rounded-full ${
-                  способДоставки === "dhl"
+                  deliveryMethods === "dhl"
                     ? "border-4 border-blue"
                     : "border border-gray-4"
                 }`}
@@ -120,4 +120,4 @@ const СпособДоставки = () => {
   );
 };
 
-export default СпособДоставки;
+export default DeliveryMethods;
