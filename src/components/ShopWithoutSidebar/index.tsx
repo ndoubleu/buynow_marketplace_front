@@ -6,7 +6,6 @@ import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
 import CustomSelect from "../ShopWithSidebar/CustomSelect";
 
-import shopData from "../Shop/shopData";
 import { newArrivalsAtom } from "@/store";
 import { useAtom } from "jotai";
 
