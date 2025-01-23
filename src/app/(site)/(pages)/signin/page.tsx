@@ -4,6 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "MetaPay",
   description: "MetaPay",
+  robots: "noindex, nofollow",
   // other metadata
 };
 
