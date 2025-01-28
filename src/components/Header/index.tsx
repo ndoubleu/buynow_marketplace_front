@@ -230,7 +230,7 @@ const Header = () => {
                       Корзина
                     </span>
                     <p className="font-medium text-custom-sm text-dark">
-                      UZS {totalPrice}
+                      {totalPrice} сум
                     </p>
                   </div>
                 </button>

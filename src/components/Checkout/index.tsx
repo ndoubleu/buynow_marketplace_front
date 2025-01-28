@@ -3,19 +3,23 @@ import React from "react";
 import Breadcrumb from "../Common/Breadcrumb";
 import Login from "./Login";
 // import Shipping from "./Shipping";
-import ShippingMethod from "./ShippingMethod";
 import PaymentMethod from "./PaymentMethod";
 // import Coupon from "./Coupon";
 import Billing from "./Billing";
 import { useAppSelector } from "@/redux/store";
 import { useSelector } from "react-redux";
 import { selectTotalPrice } from "@/redux/features/cart-slice";
+import { Toaster, toast } from 'react-hot-toast';
 
 const Checkout = () => {
   const cartItems = useAppSelector((state) => state.cartReducer.items);
   const totalPrice = useSelector(selectTotalPrice);
+  const showError = () => {
+    toast.error('Что-то пошло не так! Повторите попытку.');
+  };
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
       <Breadcrumb title={"Оплата"} pages={["Оплата"]} />
       <section className="overflow-hidden py-20 bg-gray-2">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
@@ -28,26 +32,6 @@ const Checkout = () => {
 
                 {/* <!-- детали оплаты --> */}
                 <Billing />
-
-                {/* <!-- адрес --> */}
-                {/* <Shipping /> */}
-
-                {/* <!-- дополнительные заметки --> */}
-                <div className="bg-white shadow-1 rounded-[10px] p-4 sm:p-8.5 mt-7.5">
-                  <div>
-                    <label htmlFor="notes" className="block mb-2.5">
-                      Дополнительные заметки (необязательно)
-                    </label>
-
-                    <textarea
-                      name="notes"
-                      id="notes"
-                      rows={5}
-                      placeholder="Заметки о вашем заказе, например, специальные инструкции для доставки."
-                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full p-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
-                    ></textarea>
-                  </div>
-                </div>
               </div>
 
               {/* <!-- правая часть оформления заказа --> */}
@@ -93,26 +77,23 @@ const Checkout = () => {
                       </div>
                       <div>
                         <p className="font-medium text-lg text-dark text-right">
-                          UZS {totalPrice}
+                          {totalPrice} сум
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* <!-- доставка --> */}
-                <ShippingMethod />
-
                 {/* <!-- способ оплаты --> */}
                 <PaymentMethod />
 
                 {/* <!-- кнопка оформления заказа --> */}
-                <button
-                  type="submit"
-                  className="w-full flex justify-center font-medium text-white bg-blue py-3 px-6 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5"
+                <div
+                  className="w-full flex justify-center font-medium text-white bg-blue py-3 px-6 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5 cursor-pointer"
+                  onClick={showError}
                 >
                   Перейти к оформлению
-                </button>
+                </div>
               </div>
             </div>
           </form>
